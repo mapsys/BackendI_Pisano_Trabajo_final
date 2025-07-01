@@ -14,7 +14,6 @@ for (const producto of productos2) {
   producto.thumbnails = producto.pictures;
   delete producto.thumbnail;
   delete producto.pictures;
-  producto.title = producto.name;
   producto.status = true;
   producto.stock = Math.floor(Math.random() * 100) + 1; // Genera un stock aleatorio entre 1 y 100
   newProductos.push(producto);

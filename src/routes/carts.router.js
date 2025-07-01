@@ -1,0 +1,40 @@
+// src/routes/carts.router.js
+import { Router } from "express";
+
+export default function cartsRouter(cartManager, productManager) {
+  const router = Router();
+
+  router.post("/", async (req, res) => {
+    try {
+      const newCart = await cartManager.addCart();
+      res.status(201).json(newCart);
+    } catch {
+      res.status(500).json({ error: "Error al crear el carrito" });
+    }
+  });
+
+  router.post("/:cid/products/:pid", async (req, res) => {
+    const { qty } = req.body;
+    const { cid, pid } = req.params;
+
+    try {
+      productManager.hasProductStock(Number(pid), qty);
+      const cart = await cartManager.addProductToCart(Number(cid), Number(pid), qty);
+      res.status(200).json(cart);
+    } catch (error) {
+      res.status(404).json({ error: error.message });
+    }
+  });
+
+  router.get("/:id", (req, res) => {
+    const { id } = req.params;
+    try {
+      const cart = cartManager.getCartById(Number(id));
+      res.status(200).json(cart);
+    } catch (error) {
+      res.status(404).json({ error: "Carrito no encontrado" });
+    }
+  });
+
+  return router;
+}

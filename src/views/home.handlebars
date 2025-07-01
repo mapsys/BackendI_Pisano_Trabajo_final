@@ -1,0 +1,22 @@
+<section class="mainSection">
+  <div class="header">
+    <h1>Lista de Productos</h1>
+    <a href="/realtimeproducts" class="realTimeView">
+      <button type="button">Ver vista en Real Time</button>
+    </a>
+  </div>
+  <div id="contenedor-productos" class="contenedor-productos">
+    {{#each products}}
+      <div class="producto">
+        <img class="producto-imagen" src="{{firstThumbnail thumbnails}}" alt="{{title}}" />
+        <div class="producto-descripcion">
+          <h5 class="producto-titulo">{{title}}</h5>
+          <p class="producto-precio">${{price}}</p>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
+
+  <footer>© copyright 2024 - Mariano Pisano</footer>
+</section>
