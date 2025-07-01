@@ -17,10 +17,11 @@ socket.on("products", (products) => {
                 <small>Precio</small>
                 <p>${product.price}</p>
               </div>
-            <button data-id="${product.id}" class="delete-btn"><i class="bi bi-trash-fill"></i></button>
+            <button data-id="${product.id}" class="delete-btn"><i class="bi bi-trash-fill delete-btn" data-id="${product.id}"></i></button>
         `;
     list.appendChild(li);
   });
+  document.getElementById("product-count").textContent = `Total de productos: ${products.length}`;
 });
 
 // Agregar producto
@@ -44,6 +45,7 @@ document.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-btn")) {
     const id = Number(e.target.dataset.id);
     if (confirm("¿Seguro que deseas eliminar este producto?")) {
+      console.log(`Eliminando producto con ID: ${id}`);
       socket.emit("deleteProduct", id);
     }
   }

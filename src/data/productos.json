@@ -1,33 +1,5 @@
 [
   {
-    "id": 1,
-    "description": "Esencia Para Repostería apto vegano Sweet Chef sabor Limón\n\nLas Esencias Sweet Chef son concentradas, se usan en gotas y sirven para todo tipo de preparaciones, dulces o saladas y en frío o en caliente ya que resisten las altas temperaturas.\n\n-Son muy rendidoras.\n-No tienen colorantes ni conservantes.\n-No poseen agua en su composición ya que están elaboras al aceite.\n-Se utilizan aceites esenciales de primera calidad.\n-Es un producto apto veganos.\n-Sin azúcar.\n-Libre de sodio.\n-Pueden utilizarse",
-    "price": 6670,
-    "title": "Esencia Para Reposteria Sweet Chef Apto Vegano De Limon 30cc",
-    "stock": 6,
-    "code": "MLA1142228828",
-    "thumbnails": [
-      "http://http2.mlstatic.com/D_908277-MLA50337690545_062022-O.jpg",
-      "http://http2.mlstatic.com/D_815330-MLA50284561106_062022-O.jpg",
-      "http://http2.mlstatic.com/D_746642-MLA52239288495_112022-O.jpg"
-    ],
-    "status": true
-  },
-  {
-    "id": 2,
-    "title": "Molde Para Pan Pastel Gelatina Heritage Nordicware Aluminio Color Dorado",
-    "description": "Molde de aluminio antiadherente de alta calidad, cuya fundición proporciona una cocción uniforme, ideal para elaborar tus postres favoritos.\n\nMedidas:\n\nDiámetro: 25,7 cm.\nAltura: 8 cm.\n\nLos moldes Nordic Ware se deben lavar con agua templada jabonosa antes del primer uso y después de cada utilización. Si queda algún residuo en una hendidura, esperar a que se seque y retirar con un pincel.\n\nPara asegurar que al desmoldar se obtienen las formas definidas que ofrecen los distintos moldes, se debe u",
-    "price": 159999,
-    "stock": 9,
-    "code": "MLA1771700010",
-    "thumbnails": [
-      "http://http2.mlstatic.com/D_738318-MLU72027189565_092023-O.jpg",
-      "http://http2.mlstatic.com/D_777388-MLU72027111599_092023-O.jpg",
-      "http://http2.mlstatic.com/D_833750-MLU72027189577_092023-O.jpg"
-    ],
-    "status": true
-  },
-  {
     "id": 3,
     "price": 3989,
     "title": "Espátula Rasqueta Acero Inoxidable Cornet Pastelería Medidas",
@@ -41,18 +13,6 @@
       "http://http2.mlstatic.com/D_921167-MLA77122775465_062024-O.jpg",
       "http://http2.mlstatic.com/D_763881-MLA76913391308_062024-O.jpg",
       "http://http2.mlstatic.com/D_845201-MLA77122775493_062024-O.jpg"
-    ],
-    "status": true
-  },
-  {
-    "id": 4,
-    "price": 88970,
-    "description": "**COTILLÓN WAF (WE ARE FUN)**\n\nChocolate Cobertura Fenix Blanco Nº90 X1kg X 1\n\n*COTILLÓN .\n*LUMINOSO.\n*LED.\n*REPOSTERÍA.\n*FECHAS ESPECIALES.\n*PRODUCTOS SIN TACC.\n*DECORACIÓN DE EVENTOS.\n\nENVÍOS A TODO EL PAÍS POR MERCADO ENVÍOS.\n\n\n*PARA ENVIOS EN EL DIA EL HORARIO DE ENTREGA ES DE 18HS A 21HS\n\n\n*PARA RETIRAR EN EL LOCAL (SI COMPRAS ANTES DE LAS 13HS PODES RETIRAR EL MISMO DIA A PARTIR DE LAS 15HS, SI COMPRAS DESPUES DE ESE HORARIO PODES RETIRAR AL DIA SIGUIENTE)\n\n\nMANEJAMOS GRAN VARIEDAD DE COTI",
-    "title": "Chocolate Cobertura Fenix Blanco Nº90 X1kg X 1",
-    "stock": 11,
-    "code": "MLA1462820359",
-    "thumbnails": [
-      "http://http2.mlstatic.com/D_876762-MLA80972068483_112024-O.jpg"
     ],
     "status": true
   },
