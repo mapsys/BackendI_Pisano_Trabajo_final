@@ -15,6 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const dataPath = join(__dirname, "src/data");
 
+// COnfiguro express y Socket.IO
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
@@ -37,6 +38,8 @@ app.set("views", join(__dirname, "src/views"));
 app.use(express.static(join(__dirname, "src/public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Configuro mongoose
 
 // Rutas
 app.use("/api/products", productsRouter(productManager));
