@@ -18,18 +18,18 @@ export default function cartsRouter(cartManager, productManager) {
     const { cid, pid } = req.params;
 
     try {
-      productManager.hasProductStock(Number(pid), qty);
-      const cart = await cartManager.addProductToCart(Number(cid), Number(pid), qty);
+      await productManager.hasProductStock(pid, qty);
+      const cart = await cartManager.addProductToCart(cid, pid, qty);
       res.status(200).json(cart);
     } catch (error) {
       res.status(404).json({ error: error.message });
     }
   });
 
-  router.get("/:id", (req, res) => {
+  router.get("/:id", async (req, res) => {
     const { id } = req.params;
     try {
-      const cart = cartManager.getCartById(Number(id));
+      const cart = await cartManager.getCartById(id);
       res.status(200).json(cart);
     } catch (error) {
       res.status(404).json({ error: "Carrito no encontrado" });

@@ -35,16 +35,21 @@ export default class ProductManagerMongo {
     return newProduct;
   }
 
-  async getProductById(id) {
-    const product = await Producto.findById(id);
+  async getProductByCode(code) {
+    const product = await Producto.findOne({ code: code });
     if (!product) {
       throw new Error("Producto no encontrado");
     }
     return product;
   }
 
-  async updateProduct(id, updatedFields) {
-    const product = await Producto.findByIdAndUpdate(id, updatedFields, { new: true });
+  async updateProduct(code, updatedFields) {
+    const product = await Producto.findOneAndUpdate(
+      { code: code }, // filtro por campo code
+      updatedFields,
+      { new: true } // devuelve el documento actualizado
+    );
+
     if (!product) {
       throw new Error("Producto no encontrado");
     }

@@ -5,7 +5,8 @@ import { dirname, join } from "path";
 import { createServer } from "http";
 // import ProductManager from "./src/managers/productManager.js";
 import ProductManager from "./src/managers/productManagerMongo.js";
-import CartManager from "./src/managers/cartManager.js";
+// import CartManager from "./src/managers/cartManager.js";
+import CartManager from "./src/managers/cartManagerMongo.js";
 import productsRouter from "./src/routes/products.router.js";
 import cartsRouter from "./src/routes/carts.router.js";
 import viewsRouter from "./src/routes/views.router.js";
@@ -24,7 +25,7 @@ const io = new Server(httpServer);
 const PORT = 8080;
 // const productManager = await ProductManager.crear(dataPath);
 const productManager = new ProductManager();
-const cartManager = await CartManager.crear(dataPath);
+const cartManager = new CartManager();
 
 // Configuro Handlebars
 const hbs = exphbs.create({

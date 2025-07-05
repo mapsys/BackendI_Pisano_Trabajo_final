@@ -4,15 +4,15 @@ import { Router } from "express";
 export default function productsRouter(productManager) {
   const router = Router();
 
-  router.get("/", (req, res) => {
-    const products = productManager.getProducts();
+  router.get("/", async (req, res) => { 
+    const products = await productManager.getProducts();
     res.status(200).json(products);
   });
 
-  router.get("/:id", (req, res) => {
-    const { id } = req.params;
+  router.get("/:code", async(req, res) => {
+    const { code } = req.params;
     try {
-      const product = productManager.getProductById(Number(id));
+      const product = await productManager.getProductByCode(code);
       res.status(200).json(product);
     } catch (error) {
       res.status(404).json({ error: error.message });
@@ -29,11 +29,11 @@ export default function productsRouter(productManager) {
     }
   });
 
-  router.put("/:id", async (req, res) => {
-    const { id } = req.params;
+  router.put("/:code", async (req, res) => {
+    const { code } = req.params;
     const updatedFields = req.body;
     try {
-      const updatedProduct = await productManager.updateProduct(Number(id), updatedFields);
+      const updatedProduct = await productManager.updateProduct(code, updatedFields);
       res.status(200).json(updatedProduct);
     } catch (error) {
       res.status(404).json({ error: error.message });
