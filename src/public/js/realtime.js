@@ -1,6 +1,9 @@
 const socket = io();
 
 // Actualizar lista de productos
+socket.on("error", (errorMessage) => {
+  alert(`Error: ${errorMessage}`);
+});
 socket.on("products", (products) => {
   const list = document.getElementById("product-list");
   list.innerHTML = "";
@@ -17,7 +20,7 @@ socket.on("products", (products) => {
                 <small>Precio</small>
                 <p>${product.price}</p>
               </div>
-            <button data-id="${product.id}" class="delete-btn"><i class="bi bi-trash-fill delete-btn" data-id="${product.id}"></i></button>
+            <button data-id="${product._id}" class="delete-btn"><i class="bi bi-trash-fill delete-btn" data-id="${product._id}"></i></button>
         `;
     list.appendChild(li);
   });
@@ -43,9 +46,9 @@ form.addEventListener("submit", (e) => {
 // Eliminar producto
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-btn")) {
-    const id = Number(e.target.dataset.id);
+    const id = e.target.dataset.id;
+    console.log("Emit deleteProduct con id:", id);
     if (confirm("¿Seguro que deseas eliminar este producto?")) {
-      console.log(`Eliminando producto con ID: ${id}`);
       socket.emit("deleteProduct", id);
     }
   }

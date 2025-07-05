@@ -3,25 +3,27 @@ import exphbs from "express-handlebars";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { createServer } from "http";
-import ProductManager from "./src/managers/productManager.js";
+// import ProductManager from "./src/managers/productManager.js";
+import ProductManager from "./src/managers/productManagerMongo.js";
 import CartManager from "./src/managers/cartManager.js";
 import productsRouter from "./src/routes/products.router.js";
 import cartsRouter from "./src/routes/carts.router.js";
 import viewsRouter from "./src/routes/views.router.js";
 import { Server } from "socket.io";
-import http from "http";
+import mongoose from "mongoose";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const dataPath = join(__dirname, "src/data");
 
-// COnfiguro express y Socket.IO
+// Configuro express y Socket.IO
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 const PORT = 8080;
-const productManager = await ProductManager.crear(dataPath);
+// const productManager = await ProductManager.crear(dataPath);
+const productManager = new ProductManager();
 const cartManager = await CartManager.crear(dataPath);
 
 // Configuro Handlebars
@@ -40,6 +42,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Configuro mongoose
+mongoose
+  .connect("mongodb+srv://mapsys2007:phut5lE2TWOCoru7@cluster0.jammggy.mongodb.net/tienda?retryWrites=true&w=majority&appName=Cluster0")
+  .then(() => {
+    console.log("Conexión a MongoDB exitosa");
+  })
+  .catch((error) => {
+    console.error("Error al conectar a MongoDB:", error);
+  });
 
 // Rutas
 app.use("/api/products", productsRouter(productManager));
@@ -47,27 +57,35 @@ app.use("/api/carts", cartsRouter(cartManager, productManager));
 app.use("/", viewsRouter(productManager));
 
 // WebSocket connection
-io.on("connection", (socket) => {
+io.on("connection", async (socket) => {
   console.log("Cliente conectado");
 
-  socket.emit("products", productManager.getProducts());
+  (async () => {
+    const products = await productManager.getProducts();
+    socket.emit("products", products);
+  })();
 
-  socket.on("addProduct", async (productData) => {
-    try {
-      await productManager.addProduct(productData.description, productData.price, productData.thumbnail, productData.title, productData.code, productData.stock);
-      io.emit("products", productManager.getProducts());
-    } catch (error) {
-      socket.emit("error", error.message);
-    }
+  socket.on("addProduct", (productData) => {
+    (async () => {
+      try {
+        await productManager.addProduct(productData.description, productData.price, productData.thumbnail, productData.title, productData.code, productData.stock);
+        const updatedProducts = await productManager.getProducts();
+        io.emit("products", updatedProducts);
+      } catch (error) {
+        socket.emit("error", error.message);
+      }
+    })();
   });
-
-  socket.on("deleteProduct", async (id) => {
-    try {
-      await productManager.deleteProduct(Number(id));
-      io.emit("products", productManager.getProducts());
-    } catch (error) {
-      socket.emit("error", error.message);
-    }
+  socket.on("deleteProduct", (id) => {
+    productManager
+      .deleteProduct(id)
+      .then(() => productManager.getProducts())
+      .then((updatedProducts) => {
+        io.emit("products", updatedProducts);
+      })
+      .catch((error) => {
+        socket.emit("error", error.message);
+      });
   });
 });
 
