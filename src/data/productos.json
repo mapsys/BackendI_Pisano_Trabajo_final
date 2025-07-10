@@ -1,10 +1,41 @@
 [
   {
+    "id": 1,
+    "description": "Esencia Para Repostería apto vegano Sweet Chef sabor Limón\n\nLas Esencias Sweet Chef son concentradas, se usan en gotas y sirven para todo tipo de preparaciones, dulces o saladas y en frío o en caliente ya que resisten las altas temperaturas.\n\n-Son muy rendidoras.\n-No tienen colorantes ni conservantes.\n-No poseen agua en su composición ya que están elaboras al aceite.\n-Se utilizan aceites esenciales de primera calidad.\n-Es un producto apto veganos.\n-Sin azúcar.\n-Libre de sodio.\n-Pueden utilizarse",
+    "price": 6670,
+    "category": "Aromatizantes",
+    "title": "Esencia Para Reposteria Sweet Chef Apto Vegano De Limon 30cc",
+    "stock": 88,
+    "code": "MLA1142228828",
+    "thumbnails": [
+      "http://http2.mlstatic.com/D_908277-MLA50337690545_062022-O.jpg",
+      "http://http2.mlstatic.com/D_815330-MLA50284561106_062022-O.jpg",
+      "http://http2.mlstatic.com/D_746642-MLA52239288495_112022-O.jpg"
+    ],
+    "status": true
+  },
+  {
+    "id": 2,
+    "title": "Molde Para Pan Pastel Gelatina Heritage Nordicware Aluminio Color Dorado",
+    "description": "Molde de aluminio antiadherente de alta calidad, cuya fundición proporciona una cocción uniforme, ideal para elaborar tus postres favoritos.\n\nMedidas:\n\nDiámetro: 25,7 cm.\nAltura: 8 cm.\n\nLos moldes Nordic Ware se deben lavar con agua templada jabonosa antes del primer uso y después de cada utilización. Si queda algún residuo en una hendidura, esperar a que se seque y retirar con un pincel.\n\nPara asegurar que al desmoldar se obtienen las formas definidas que ofrecen los distintos moldes, se debe u",
+    "category": "Moldes",
+    "price": 159999,
+    "stock": 19,
+    "code": "MLA1771700010",
+    "thumbnails": [
+      "http://http2.mlstatic.com/D_738318-MLU72027189565_092023-O.jpg",
+      "http://http2.mlstatic.com/D_777388-MLU72027111599_092023-O.jpg",
+      "http://http2.mlstatic.com/D_833750-MLU72027189577_092023-O.jpg"
+    ],
+    "status": true
+  },
+  {
     "id": 3,
     "price": 3989,
     "title": "Espátula Rasqueta Acero Inoxidable Cornet Pastelería Medidas",
+    "category": "Espatulas",
     "description": "Somos AlohaStore\nRasqueta Repostera Acero Inoxidable Cornet Pastelería Masas\nMedidas: 15cm Largo x 11,5cm Ancho \nMaterial: Acero Inoxidable\n------------------------------------------\nPuede retirar sus compras en zona de Villa Crespo C.A.B.A Cerca de la estacion del subte Malabia - O.Pugliese linea B \nLa factura se realiza automáticamente con los datos que están ingresados en tu cuenta, en caso de necesitar cambiar CUIT/Razón Social: por favor, dar aviso.\nEnvíos CABA y GBA en el día 16 a 21hrs, y",
-    "stock": 10,
+    "stock": 58,
     "code": "MLA1143667875",
     "thumbnails": [
       "http://http2.mlstatic.com/D_902195-MLA76913391274_062024-O.jpg",
@@ -17,11 +48,25 @@
     "status": true
   },
   {
+    "id": 4,
+    "price": 88970,
+    "description": "**COTILLÓN WAF (WE ARE FUN)**\n\nChocolate Cobertura Fenix Blanco Nº90 X1kg X 1\n\n*COTILLÓN .\n*LUMINOSO.\n*LED.\n*REPOSTERÍA.\n*FECHAS ESPECIALES.\n*PRODUCTOS SIN TACC.\n*DECORACIÓN DE EVENTOS.\n\nENVÍOS A TODO EL PAÍS POR MERCADO ENVÍOS.\n\n\n*PARA ENVIOS EN EL DIA EL HORARIO DE ENTREGA ES DE 18HS A 21HS\n\n\n*PARA RETIRAR EN EL LOCAL (SI COMPRAS ANTES DE LAS 13HS PODES RETIRAR EL MISMO DIA A PARTIR DE LAS 15HS, SI COMPRAS DESPUES DE ESE HORARIO PODES RETIRAR AL DIA SIGUIENTE)\n\n\nMANEJAMOS GRAN VARIEDAD DE COTI",
+    "category": "Chocolates",
+    "title": "Chocolate Cobertura Fenix Blanco Nº90 X1kg X 1",
+    "stock": 26,
+    "code": "MLA1462820359",
+    "thumbnails": [
+      "http://http2.mlstatic.com/D_876762-MLA80972068483_112024-O.jpg"
+    ],
+    "status": true
+  },
+  {
     "id": 5,
     "price": 4290,
     "title": "Espatula Para Pizza De Acero Inoxidable Broksol Color Cromo",
     "description": "La Espátula Pizzera Broksol es una herramienta esencial para cualquier amante de la pizza o la repostería. Con su diseño elegante en color cromo, no solo es funcional sino también un atractivo adicional para tu cocina. \n\nFabricada en acero inoxidable, esta espátula garantiza durabilidad y resistencia. Su mango de acero inoxidable proporciona un agarre firme y cómodo, permitiéndote manipular tus pizzas o tortas con facilidad y precisión. \n\nEl modelo 6050 de Broksol tiene un largo total de 27 cm, ",
-    "stock": 36,
+    "category": "Espatulas",
+    "stock": 27,
     "code": "MLA1453258253",
     "thumbnails": [
       "http://http2.mlstatic.com/D_833972-MLA82381537712_022025-O.jpg",
@@ -36,9 +81,10 @@
   {
     "id": 6,
     "description": "Somos El Nuevo Emporio. Mercado Líder Platinum con más de 20 años de experiencia en el mercado, ofreciendo los mejores productos de gastronomía y bazar al mejor precio.\n\nEsencias Vainilla Fleibor x 500cc\n\nAromatizador artificial\nPara uso en repostería\nDosis recomendada: Una cucharadita de te x Kg de Producto\n\nEmitimos factura A y B.\n\nSumá artículos con Mercado Envíos a tu carrito de compras y obtené los beneficios que te brinda Mercado Libre en las compras superiores a $ 30.000 (Envíos con descu",
+    "category": "Aromatizantes",
     "title": "Esencias De Vainilla Para Reposteria Fleibor Frasco X500 Cc",
     "price": 3546.38,
-    "stock": 84,
+    "stock": 73,
     "code": "MLA1155856208",
     "thumbnails": [
       "http://http2.mlstatic.com/D_999575-MLA51228068151_082022-O.jpg"
@@ -50,7 +96,8 @@
     "description": "TIENDA OFICIAL SUGAR ON TOP\n---------------------------------------------------------------------------\nEspecificaciones del producto:\n\n- Peso neto: 1 Kg.\n\n- 39% Cacao.\n\n- 37% Azúcar.\n\n- 37% Materia grasa.\n\nLINK de nuestro CATÁLOGO\n----------------------------------------------\nhttps://listado.mercadolibre.com.ar/_CustId_1109814088?item_id=MLA1142847199&category_id=MLA30096&seller_id=1109814088&client=recoview-selleritems&recos_listing=true\n-------------------------------------------------------",
     "title": "Chocolate Cobertura Negro Con Leche Extra Líquido 71 Fenix",
     "price": 60999,
-    "stock": 92,
+    "category": "Chocolates",
+    "stock": 78,
     "code": "MLA1379563295",
     "thumbnails": [
       "http://http2.mlstatic.com/D_779952-MLA70672293060_072023-O.jpg",
@@ -62,9 +109,10 @@
   {
     "id": 8,
     "description": "La Espátula Pizzera Broksol es una herramienta esencial para cualquier amante de la pizza o la repostería. Con su diseño elegante en color cromo, no solo es funcional sino también un atractivo adicional para tu cocina. \n\nFabricada en acero inoxidable, esta espátula garantiza durabilidad y resistencia. Su mango de acero inoxidable proporciona un agarre firme y cómodo, permitiéndote manipular tus pizzas o tortas con facilidad y precisión. \n\nEl modelo 6050 de Broksol tiene un largo total de 27 cm, ",
+    "category": "Espatulas",
     "price": 4290,
     "title": "Espatula Para Pizza De Acero Inoxidable Broksol Color Cromo",
-    "stock": 80,
+    "stock": 69,
     "code": "MLA1453258253",
     "thumbnails": [
       "http://http2.mlstatic.com/D_833972-MLA82381537712_022025-O.jpg",
@@ -80,8 +128,9 @@
     "id": 9,
     "description": "CHOCOLATE COBERTURA AMARGO LACTEADO 86 X1KG | FENIX \n\n- Cacao: 60%\n- Azúcar: 30%\n- M. Grasa: 36%\n- Fluidez: 4/5\n\nResuelve tus dudas antes de hacer tu OFERTA o compra. Tu OFERTA es un compromiso de pago.\n\nRetira en nuestro local: Lunes a Viernes 9:00 a 17:00, Sábados 9:00 a 13:00.\n\nEnvíos a todo el país vía Mercado Envíos.\n\nEnviamos hasta 25 KILOS POR PEDIDO.\n\n*MERCADITO PASTELERO*",
     "price": 53621.91,
+    "category": "Chocolates",
     "title": "Chocolate Cobertura Amargo Lacteado 86 X1kg Fenix",
-    "stock": 81,
+    "stock": 45,
     "code": "MLA1430097881",
     "thumbnails": [
       "http://http2.mlstatic.com/D_851822-MLA76766737547_062024-O.jpg"
@@ -90,10 +139,11 @@
   },
   {
     "id": 10,
+    "category": "Aromatizantes",
     "description": "",
     "price": 5999.11,
     "title": "Agua De Azahar El Castillo X 100 Cc",
-    "stock": 15,
+    "stock": 55,
     "code": "MLA1393681272",
     "thumbnails": [
       "http://http2.mlstatic.com/D_788705-MLU74966788087_032024-O.jpg",
@@ -105,10 +155,11 @@
   },
   {
     "id": 11,
+    "category": "Espatulas",
     "title": "Espátula De Acero Alisador Scraper De Tortas Simil Wilt",
     "description": "DULCES SABORES®\n— Tienda Online —\n\n\"SOMOS MERCADO LIDER PLATINUM\" COMPRÁ CON CONFIANZA!!!\n___________________________________________________________________\n\nDESCRIPCIÓN DEL PRODUCTO: \n\nESPÁTULA DE ACERO PARA ALISAR GLASEADO Y CREMAS\n\nFÁCIL DE LIMPIAR\n\nHERRAMIENTA IDEAL DE TODO PASTELERO, CHEFF O AFICIONADO A LA PASTELERÍA O GASTRONOMÍA\n\n**APTO PARA LAVA VAJILLA\n\n*COLOR PLATA\n\n*MATERIAL ACERO CON AGARRE DE SILICONA VIOLETA\n\n*MEDIDAS: 22.8 CM X 7.6 CM\n\nPRODUCTO IMPORTADO\n\nEXCELENTE PARA REGALAR ",
     "price": 9750,
-    "stock": 80,
+    "stock": 18,
     "code": "MLA932781902",
     "thumbnails": [
       "http://http2.mlstatic.com/D_910033-MLA32087986376_092019-O.jpg",
@@ -126,8 +177,9 @@
     "id": 12,
     "title": "Espátula De Silicona Negra Grande Resistente Pieza Única",
     "description": "--------------\nEQUIPAMIENTOS BAZAR\n-----------------------------\n\n\nSet de espátulas de silicona negra reforzada x 3\n\nESPATULA GRANDE: 36.8CM\nESPATULA MEDIANA: 27.5CM\nMEDIA ESPATULA: 30CM\n\n- Piezas únicas reforzadas, sin soldaduras.\n- Cómodas y resistentes.\n- Antiadherente, resistente a las manchas y resistente al olor.\n- Raspador higiénico de silicona sin BPA.\n- Construcción de núcleo de acero sólido para una sujeción cómoda.\n- Diseño de cabeza de silicona flexible y de alta calidad.\n\n\nLos borde",
+    "category": "Espatulas",
     "price": 28763.09,
-    "stock": 11,
+    "stock": 97,
     "code": "MLA1425396047",
     "thumbnails": [
       "http://http2.mlstatic.com/D_988776-MLA76062183126_052024-O.jpg",
@@ -141,8 +193,9 @@
     "id": 13,
     "description": "Somos El Nuevo Emporio. Mercado Líder Platinum con más de 20 años de experiencia en el mercado, ofreciendo los mejores productos de gastronomía y bazar al mejor precio.\n\nChocolate Fénix x 1 kg cobertura número 86\n\nLas coberturas negras suelen clasificarse por su contenido de cacao, donde la intensidad y fuerza crecen a medida que éste aumenta y disminuye la cantidad de azúcar. También es posible elegir entre versiones con más o menos contenido graso, afectando la fluidez del producto.\n\nLas cober",
     "price": 52402.5,
+    "category": "Chocolates",
     "title": "Chocolate Cobertura Fenix Amargo Lactead De 86 1kg Pascuas",
-    "stock": 84,
+    "stock": 63,
     "code": "MLA934976185",
     "thumbnails": [
       "http://http2.mlstatic.com/D_704555-MLA45565750917_042021-O.jpg",
@@ -157,7 +210,8 @@
     "description": "Somos \"El Portugués\", empresa importadora de alimentos que te ofrece la mejor calidad en productos alimenticios y al mejor precio.\n\nLINK DE TODOS NUESTROS PRODUCTOS: https://listado.mercadolibre.com.ar/_CustId_474140345\n-----------------------------------------------PRODUCTO-------------------------------------------------------\n\nCOBERTURA CHOCOLATE BLANCO (90) FÉNIX X 1 KG\nORIGEN: ARGENTINA\n\nFORMAS DE ENVÍOS:\nEnvíos a todo el país\n-Mercado envíos \n- Envíos en el día\n-Expresos al interior\n\n\n-FAC",
     "price": 40000,
     "title": "Chocolate Cobertura Blanco (90) X 1kg  - Fénix - ",
-    "stock": 98,
+    "category": "Chocolates",
+    "stock": 78,
     "code": "MLA933204187",
     "thumbnails": [
       "http://http2.mlstatic.com/D_629702-MLA47015576682_082021-O.jpg",
@@ -171,9 +225,10 @@
   {
     "id": 15,
     "price": 73999,
+    "category": "Chocolates",
     "title": "Chocolate Cobertura Con Leche 83 Fenix",
     "description": "TIENDA OFICIAL SUGAR ON TOP\n---------------------------------------------------------------------------\nEspecificaciones del producto:\n\n- Peso neto: 1 Kg.\n\n- 36% Cacao.\n\n- 40% Azúcar.\n\n- 35% Materia grasa.\n\nLINK de nuestro CATÁLOGO\n----------------------------------------------\nhttps://listado.mercadolibre.com.ar/_CustId_1109814088?item_id=MLA1142847199&category_id=MLA30096&seller_id=1109814088&client=recoview-selleritems&recos_listing=true\n-------------------------------------------------------",
-    "stock": 31,
+    "stock": 87,
     "code": "MLA1315762136",
     "thumbnails": [
       "http://http2.mlstatic.com/D_813964-MLA53380475305_012023-O.jpg"
@@ -185,7 +240,8 @@
     "price": 174999,
     "title": "Molde Para Pan Pastel Gelatina Skull Nordicware De Aluminio Color Marrón",
     "description": "Molde de aluminio antiadherente de alta calidad, cuya fundición proporciona una cocción uniforme, ideal para elaborar tus postres favoritos.\n\nMedidas aproximadas: \n\nDel molde: 23,5 x 31 cm.\nDe las cavidades: 13 x 20,5 cm.\n\nLos moldes Nordic Ware se deben lavar con agua templada jabonosa antes del primer uso y después de cada utilización. Si queda algún residuo en una hendidura, esperar a que se seque y retirar con un pincel.\n\nPara asegurar que al desmoldar se obtienen las formas definidas que of",
-    "stock": 16,
+    "category": "Moldes",
+    "stock": 32,
     "code": "MLA1426335381",
     "thumbnails": [
       "http://http2.mlstatic.com/D_683194-MLU71967342542_092023-O.jpg",
@@ -198,9 +254,10 @@
   {
     "id": 17,
     "price": 141885,
+    "category": "Moldes",
     "title": "Molde Asadera Con Asas Bandeja Para Horno Procast Nordicware",
     "description": "------------------------------------------------------\nTIENDA OFICIAL SPRINKLES & MORE\n------------------------------------------------------\nFuente rectangular de aluminio fundido. Cuenta con un interior antiadherente de primera calidad y asas.\n\n- Material: Aluminio fundido.\n- Apto para hornos.\n- Antiadherente: Sí.\n- No apto para lavavajillas.\n- Dimensiones totales aproximadas: 33 cm de Largo x 19 cm de Ancho x 5,3 cm de Alto.\n- Dimensiones internas aproximadas: 27,9 cm de Largo x 17,8 cm de An",
-    "stock": 15,
+    "stock": 11,
     "code": "MLA1975577362",
     "thumbnails": [
       "http://http2.mlstatic.com/D_893488-MLA81093512068_122024-O.jpg",
@@ -215,9 +272,10 @@
   {
     "id": 18,
     "price": 10443.34,
+    "category": "Espatulas",
     "title": "Espátula De Hierro Kankay Para Cocina Y Parrilla 1 Pieza 3c Color Plateado",
     "description": "Espátula de Hierro Premium Kankay 1 Pieza Ideal para acompañar nuestras parrillas y sartenes.\n\nDiseñada para los amantes de la cocina, esta espátula es el complemento perfecto para tus sartenes Kankay. Fabricada con hierro de alta calidad, garantiza durabilidad y resistencia para enfrentar cualquier tarea culinaria.\n\nSu diseño ergonómico y mango antideslizante proporcionan un agarre cómodo y seguro, permitiéndote maniobrar con precisión y control. Ya sea girar hamburguesas en la parrilla o mezcl",
-    "stock": 67,
+    "stock": 69,
     "code": "MLA1463799487",
     "thumbnails": [
       "http://http2.mlstatic.com/D_806264-MLA79735760800_102024-O.jpg",
@@ -231,7 +289,8 @@
     "description": "Esencias Dulces y Saladas Sweet Cheff\n\n\nLas **Esencias Sweet Cheff son concentradas, se utilizan en gotas y son perfectas para todo tipo de preparaciones, tanto dulces como saladas. Son aptas para su uso en recetas frías o calientes, ya que resisten altas temperaturas.\n\n- Alto rendimiento: pequeñas cantidades rinden mucho.\n- Sin colorantes ni conservantes: 100% naturales.\n- Composición sin agua: formuladas con base de aceite.\n- Aceites esenciales de alta calidad.\n- Producto apto para veganos\n- V",
     "title": "Esencia Para Reposteria Comestibles Sweet Chef Titanweb",
     "price": 5690,
-    "stock": 1,
+    "category": "Aromatizantes",
+    "stock": 16,
     "code": "MLA1122890154",
     "thumbnails": [
       "http://http2.mlstatic.com/D_959273-MLA49327458248_032022-O.jpg",
@@ -437,9 +496,10 @@
   {
     "id": 20,
     "title": "Chocolate Cobertura Amargo Lacteado 86 X1kg Fenix",
+    "category": "Chocolates",
     "price": 53621.91,
     "description": "CHOCOLATE COBERTURA AMARGO LACTEADO 86 X1KG | FENIX \n\n- Cacao: 60%\n- Azúcar: 30%\n- M. Grasa: 36%\n- Fluidez: 4/5\n\nResuelve tus dudas antes de hacer tu OFERTA o compra. Tu OFERTA es un compromiso de pago.\n\nRetira en nuestro local: Lunes a Viernes 9:00 a 17:00, Sábados 9:00 a 13:00.\n\nEnvíos a todo el país vía Mercado Envíos.\n\nEnviamos hasta 25 KILOS POR PEDIDO.\n\n*MERCADITO PASTELERO*",
-    "stock": 74,
+    "stock": 2,
     "code": "MLA1430097881",
     "thumbnails": [
       "http://http2.mlstatic.com/D_851822-MLA76766737547_062024-O.jpg"
@@ -448,10 +508,11 @@
   },
   {
     "id": 21,
+    "category": "Chocolates",
     "price": 38528,
     "description": "Disfruta de la deliciosa Cobertura De Chocolate Blanco 90 Fenix en una práctica bolsa de 1kg. Ideal para tus recetas de repostería y postres, este chocolate blanco de alta calidad, fabricado por Fenix Full, te permitirá darle un toque especial y exquisito a tus creaciones culinarias. La presentación en bolsa facilita su almacenamiento y conservación, asegurando que siempre tengas a mano la cantidad necesaria para tus preparaciones. Aunque no es libre de gluten, este chocolate es perfecto para qu",
     "title": "Cobertura De Chocolate Blanco 90 Fenix 1kg.",
-    "stock": 64,
+    "stock": 29,
     "code": "MLA1426077277",
     "thumbnails": [
       "http://http2.mlstatic.com/D_774138-MLA52268812710_112022-O.jpg",
@@ -466,9 +527,10 @@
   {
     "id": 22,
     "price": 25169,
+    "category": "Espatulas",
     "title": "Set X4 Utensilios Acero Inoxidable Hudson Espatula Cuchara",
     "description": "SET X 4 UTENSILIOS DE ACERO INOXIDABLE HUDSON\n\nContiene: \n1 ESPUMADERA\n- Medidas:\nLargo total: 35,2 cm\nLargo del mango: 12,9 cm\nAncho: 11,7 cm\n\n1 CUCHARON\n- Medidas:\nLargo total: 33,4 cm\nLargo del mango: 12,9 cm\nAncho: 8,8 cm\n\n1 CUCHARA \n- Medidas:\nLargo total: 33 cm\nLargo del mango: 13 cm\nAncho de la espátula: 6,5 cm\n\n1 ESPATULA CALADA\n- Medidas:\nLargo total: 33,7 cm\nLargo del mango: 12,9 cm\nAncho de la espátula: 6,9 cm\n\n- De acero inoxidable 18/0.\n- Durable, Optima calidad.\n- Apto lavavajillas",
-    "stock": 35,
+    "stock": 33,
     "code": "MLA1417492583",
     "thumbnails": [
       "http://http2.mlstatic.com/D_707338-MLA80162863211_102024-O.jpg"
@@ -478,9 +540,10 @@
   {
     "id": 23,
     "title": "Esencia Aromatizante De Banana Natural Fleibor Reposteria 1l",
+    "category": "Aromatizantes",
     "description": "Somos El Nuevo Emporio. Mercado Líder Platinum con más de 20 años de experiencia en el mercado, ofreciendo los mejores productos de gastronomía y bazar al mejor precio.\n\nEsencia Banana Fleibor x 1 litro.\n\nLa esencia BANANA Fleibor es el mejor aliado para darle a tus postres un toque de sabor y aromas únicos. Su contenido de aceites esenciales 100% naturales ofrecen una exquisita combinación para tus preparaciones. Viene en una botella fácil de usar, con un volumen neto de 1 litro para que puedas",
     "price": 6892.31,
-    "stock": 16,
+    "stock": 5,
     "code": "MLA1371867937",
     "thumbnails": [
       "http://http2.mlstatic.com/D_622830-MLA69215561714_052023-O.jpg",
@@ -491,9 +554,10 @@
   {
     "id": 24,
     "title": "Extracto De Vainilla Natural 5 Litros El Castillo Reposteria",
+    "category": "Aromatizantes",
     "price": 110925,
     "description": "Somos Distribuidora Positiva, una empresa dedicada especialmente a comercializar productos alimenticios y dietéticos de la mejor calidad y al mejor precio. Nos dedicamos a la venta minorista como también a la venta mayorista para los revendedores o distribuidores.\n\nREALIZAMOS FACTURA M O B\n\nFORMAS DE ENVÍOS:\nEnvíos a todo el país\n-Mercado envíos\n-Envíos en el día\n-Expresos al interior\n\n¿Por qué deberías elegirnos a nosotros?\nSomos una empresa dedicada a nuestros clientes, con una constante atenc",
-    "stock": 10,
+    "stock": 79,
     "code": "MLA1362031510",
     "thumbnails": [
       "http://http2.mlstatic.com/D_666971-MLA54128264196_032023-O.jpg"
@@ -505,7 +569,8 @@
     "price": 75999,
     "description": "TIENDA OFICIAL SUGAR ON TOP\n---------------------------------------------------------------------------\nEspecificaciones del producto:\n\n- Peso neto: 1 Kg.\n\n- 39% Cacao.\n\n- 37% Azúcar.\n\n- 37% Materia grasa.\n\nLINK de nuestro CATÁLOGO\n----------------------------------------------\nhttps://listado.mercadolibre.com.ar/_CustId_1109814088?item_id=MLA1142847199&category_id=MLA30096&seller_id=1109814088&client=recoview-selleritems&recos_listing=true\n-------------------------------------------------------",
     "title": "Chocolate Cobertura Negro Con Leche Extra Líquido 71 Fenix",
-    "stock": 9,
+    "category": "Chocolates",
+    "stock": 39,
     "code": "MLA1379648513",
     "thumbnails": [
       "http://http2.mlstatic.com/D_779952-MLA70672293060_072023-O.jpg",
@@ -518,8 +583,9 @@
     "id": 26,
     "description": "Este molde rectangular con asas de acero de 23 cm de Nordicware en color dorado es un elemento esencial para cualquier cocina bien equipada. Forma parte de la colección Treat™ y cuenta con una superficie antiadherente sin PFOA para una fácil liberación y limpieza rápida. Su color champán claro le da un toque sofisticado y evita que los productos horneados se doren demasiado en el horno. La sartén presenta una sutil textura de diamante en su superficie para fortalecer la sartén y evitar que se de",
     "title": "Molde Rectangular Con Asas Acero 23 Cm Nordicware Color Dorado",
+    "category": "Moldes",
     "price": 43885,
-    "stock": 78,
+    "stock": 87,
     "code": "MLA1973672482",
     "thumbnails": [
       "http://http2.mlstatic.com/D_675531-MLU73804076217_012024-O.jpg",
@@ -533,7 +599,8 @@
     "description": "TIENDA OFICIAL SUGAR ON TOP\n---------------------------------------------------------------------------\nEspecificaciones del producto:\n\n- Peso neto: 1 Kg.\n\n- 39% Cacao.\n\n- 37% Azúcar.\n\n- 37% Materia grasa.\n\nLINK de nuestro CATÁLOGO\n----------------------------------------------\nhttps://listado.mercadolibre.com.ar/_CustId_1109814088?item_id=MLA1142847199&category_id=MLA30096&seller_id=1109814088&client=recoview-selleritems&recos_listing=true\n-------------------------------------------------------",
     "title": "Chocolate Cobertura Negro Con Leche Extra Líquido 71 Fenix",
     "price": 75999,
-    "stock": 7,
+    "category": "Chocolates",
+    "stock": 74,
     "code": "MLA1379648513",
     "thumbnails": [
       "http://http2.mlstatic.com/D_779952-MLA70672293060_072023-O.jpg",
@@ -545,9 +612,10 @@
   {
     "id": 28,
     "price": 87580,
+    "category": "Chocolates",
     "title": "Chocolate Cobertura Fenix Con Leche Nº71 X1kg",
     "description": "WAF STORE\n\nChocolate Cobertura Fenix Con Leche Nº71 X1kg\n\n*COTILLÓN .\n*LUMINOSO.\n*LED.\n*REPOSTERÍA.\n*FECHAS ESPECIALES.\n*PRODUCTOS SIN TACC.\n*DECORACIÓN DE EVENTOS.\n\nENVÍOS A TODO EL PAÍS POR MERCADO ENVÍOS.\n\n\n*PARA ENVIOS EN EL DIA EL HORARIO DE ENTREGA ES DE 18HS A 21HS\n\n\n*PARA RETIRAR EN EL LOCAL (SI COMPRAS ANTES DE LAS 13HS PODES RETIRAR EL MISMO DIA A PARTIR DE LAS 15HS, SI COMPRAS DESPUES DE ESE HORARIO PODES RETIRAR AL DIA SIGUIENTE)\n\n\nMANEJAMOS GRAN VARIEDAD DE COTILLÓN Y REPOSTERÍA.\n\n\n",
-    "stock": 47,
+    "stock": 62,
     "code": "MLA1442653861",
     "thumbnails": [
       "http://http2.mlstatic.com/D_836791-MLA78103684418_082024-O.jpg",
@@ -560,7 +628,8 @@
     "title": "Espátula De Cocina Multiuso Mango Plastico Crystal Rock Color Negro",
     "price": 5399,
     "description": "La espátula de cocina Crystal Rock es una herramienta esencial para cualquier amante de la cocina. Con una longitud total de 24 cm y un ancho mayor de 10 cm, es de tamaño mediano, perfecta para manejar una variedad de alimentos en la plancha. La lámina de esta espátula está hecha de acero inoxidable, un material resistente y duradero que garantiza un uso prolongado. El mango de plástico color negro no solo añade un toque de elegancia, sino que también proporciona un agarre cómodo y seguro durant",
-    "stock": 82,
+    "category": "Espatulas",
+    "stock": 5,
     "code": "MLA1660947232",
     "thumbnails": [
       "http://http2.mlstatic.com/D_794477-MLU72953122395_112023-O.jpg",
@@ -572,10 +641,11 @@
   },
   {
     "id": 30,
+    "category": "Chocolates",
     "title": "Chocolate Cobertura Fenix 88 Amargo 80% Cacao X 1 Kg",
     "description": "",
     "price": 47000,
-    "stock": 2,
+    "stock": 36,
     "code": "MLA1505200106",
     "thumbnails": [
       "http://http2.mlstatic.com/D_724432-MLU71621984891_092023-O.jpg",
@@ -584,18 +654,6 @@
       "http://http2.mlstatic.com/D_969868-MLU72534406234_102023-O.jpg",
       "http://http2.mlstatic.com/D_747261-MLU78640308846_092024-O.jpg"
     ],
-    "status": true
-  },
-  {
-    "id": 31,
-    "description": "Mi nuevo producto",
-    "price": 123,
-    "thumbnails": [
-      "http://http2.mlstatic.com/D_951231-MLA49063870564_022022-O.jpg"
-    ],
-    "title": "Nuevo Producto",
-    "code": "mlfg",
-    "stock": 100,
     "status": true
   }
 ]
