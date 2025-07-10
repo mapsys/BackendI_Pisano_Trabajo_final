@@ -10,7 +10,7 @@ export default class ProductManagerMongo {
 
   async addProduct(description, price, thumbnail, title, code, stock) {
     if (!description || !price || !title || !code || stock === undefined) {
-      throw new Error("Todos los campos son obligatorios");
+      throw new Error("Los campos Title, Description, Price, Code y Stock son obligatorios");
     }
     if (typeof price !== "number" || price <= 0) {
       throw new Error("El precio debe ser un número positivo");

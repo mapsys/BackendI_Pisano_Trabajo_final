@@ -4,12 +4,12 @@ import { Router } from "express";
 export default function productsRouter(productManager) {
   const router = Router();
 
-  router.get("/", async (req, res) => { 
+  router.get("/", async (req, res) => {
     const products = await productManager.getProducts();
     res.status(200).json(products);
   });
 
-  router.get("/:code", async(req, res) => {
+  router.get("/:code", async (req, res) => {
     const { code } = req.params;
     try {
       const product = await productManager.getProductByCode(code);
@@ -21,6 +21,9 @@ export default function productsRouter(productManager) {
 
   router.post("/", async (req, res) => {
     const { description, price, thumbnail, title, code, stock } = req.body;
+    if (!title || !description || !price || !code || !stock) {
+      return res.status(400).json({ error: "Los campos Title, Description, Price, Code y Stock son obligatorios" });
+    }
     try {
       const newProduct = await productManager.addProduct(description, price, thumbnail, title, code, stock);
       res.status(201).json(newProduct);

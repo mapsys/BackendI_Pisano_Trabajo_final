@@ -9,8 +9,8 @@ export default function viewsRouter(productManager) {
     res.render("home", { products });
   });
 
-  router.get("/realtimeproducts", (req, res) => {
-    const products = productManager.getProducts();
+  router.get("/realtimeproducts", async (req, res) => {
+    const products = await productManager.getProducts();
     res.render("realTimeProducts", { products });
   });
 
