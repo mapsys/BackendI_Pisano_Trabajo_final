@@ -9,7 +9,7 @@ export default function cartsRouter(cartManager, productManager) {
       const newCart = await cartManager.addCart();
       res.status(201).json(newCart);
     } catch {
-      res.status(500).json({ error: "Error al crear el carrito" });
+      res.status(500).json({ error: "Error al crear el carrito en el router" });
     }
   });
 
@@ -26,13 +26,23 @@ export default function cartsRouter(cartManager, productManager) {
     }
   });
 
-  router.get("/:id", async (req, res) => {
+  router.get("/:id", async (req, res) => { 
     const { id } = req.params;
     try {
       const cart = await cartManager.getCartById(id);
       res.status(200).json(cart);
     } catch (error) {
       res.status(404).json({ error: "Carrito no encontrado" });
+    }
+  });
+
+  router.get("/:cid/totales", async (req, res) => {
+    const { cid } = req.params;
+    try {
+      const totales = await cartManager.calcularTotales(cid);
+      res.status(200).json(totales);
+    } catch (error) {
+      res.status(500).json({ error: "Error al obtener los carritos" });
     }
   });
 

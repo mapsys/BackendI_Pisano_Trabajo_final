@@ -2,6 +2,14 @@ import Producto from "../models/producto.model.js";
 
 export default class ProductManagerMongo {
   constructor() {}
+  async paginate(filtro, opciones) {
+    try {
+      const resultado = await Producto.paginate(filtro, opciones);
+      return resultado;
+    } catch (error) {
+      throw new Error(`Error al paginar productos: ${error.message}`);
+    }
+  }
 
   async getProducts() {
     const productos = await Producto.find().lean();

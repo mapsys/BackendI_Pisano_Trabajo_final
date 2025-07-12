@@ -1,5 +1,5 @@
 import Cart from "../models/cart.model.js";
-
+import mongoose from "mongoose";
 export default class CartManager {
   constructor() {
     // En Mongo ya no necesitas ruta ni manejo manual de ids
@@ -27,6 +27,50 @@ export default class CartManager {
     return newCart;
   }
 
+  async calcularTotales(cartId) {
+    try {
+      console.log("Calculando totales para el carrito:", cartId);
+
+      const result = await Cart.aggregate([
+        { $match: { _id: new mongoose.Types.ObjectId(cartId) } },
+        { $unwind: "$products" },
+        {
+          $lookup: {
+            from: "productos", // asegurate que esta sea tu colección real
+            localField: "products.product",
+            foreignField: "_id",
+            as: "productoInfo",
+          },
+        },
+        { $unwind: "$productoInfo" },
+        {
+          $group: {
+            _id: null,
+            totalCantidad: { $sum: "$products.quantity" },
+            totalPrecio: {
+              $sum: {
+                $multiply: ["$products.quantity", "$productoInfo.price"],
+              },
+            },
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            totalCantidad: 1,
+            totalPrecio: 1,
+          },
+        },
+      ]);
+
+      console.log("Resultado de la agregación:", result);
+      return result[0] || { totalCantidad: 0, totalPrecio: 0 };
+    } catch (error) {
+      console.error("Error en calcularTotales:", error.message);
+      throw error;
+    }
+  }
+
   // Agregar producto a carrito existente
   async addProductToCart(cartId, productId, qty) {
     if (!cartId || !productId || typeof qty !== "number" || qty <= 0) {
@@ -38,13 +82,16 @@ export default class CartManager {
       throw new Error("Carrito no encontrado");
     }
 
-    const productIndex = cart.products.findIndex((p) => p.id === productId);
+    const productIndex = cart.products.findIndex((p) => p.product.toString() === productId);
     if (productIndex !== -1) {
       // Si ya existe, sumar la cantidad
-      cart.products[productIndex].qty += qty;
+      cart.products[productIndex].quantity += qty;
     } else {
       // Si no existe, agregar al array
-      cart.products.push({ id: productId, qty });
+      cart.products.push({
+        product: new mongoose.Types.ObjectId(productId),
+        quantity: qty,
+      });
     }
 
     await cart.save();

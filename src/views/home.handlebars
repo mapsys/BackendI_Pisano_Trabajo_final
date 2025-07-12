@@ -1,22 +1,54 @@
-<section class="mainSection">
-  <div class="header">
-    <h1>Lista de Productos</h1>
-    <a href="/realtimeproducts" class="realTimeView">
-      <button type="button">Ver vista en Real Time</button>
-    </a>
+<main>
+  <div class="main-header">
+    <h2 id="titulo-principal" class="titulo-principal">Todos los productos</h2>
+    <form id="filtros-form" method="GET" action="/">
+      <label for="limit">Productos por página:</label>
+      <select name="limit" id="limit">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="20">20</option>
+      </select>
+
+      <label for="sort">Orden:</label>
+      <select name="sort" id="sort">
+        <option value="">Sin orden</option>
+        <option value="asc">Precio ascendente</option>
+        <option value="desc">Precio descendente</option>
+      </select>
+
+      <button type="submit">Aplicar</button>
+    </form>
+
+    <button id="btnUserLogin" class="user-login">
+      <i class="bi bi-person-circle"></i>
+      <span class="user-name" id="user-name"></span>
+    </button>
   </div>
+
   <div id="contenedor-productos" class="contenedor-productos">
     {{#each products}}
-      <div class="producto">
-        <img class="producto-imagen" src="{{firstThumbnail thumbnails}}" alt="{{title}}" />
-        <div class="producto-descripcion">
+      <div class="producto tarjeta-horizontal">
+        <div class="producto-imagen-container">
+          <img class="producto-imagen" src="{{firstThumbnail thumbnails}}" alt="{{title}}" />
+        </div>
+        <div class="producto-detalle">
           <h5 class="producto-titulo">{{title}}</h5>
           <p class="producto-precio">${{price}}</p>
+          <button class="producto-agregar" data-id="{{_id}}">Agregar al carrito</button>
         </div>
       </div>
     {{/each}}
 
   </div>
+<div class="paginacion">
+  {{#if hasPrevPage}}
+    <a href="/?page={{prevPage}}{{#if query}}&query={{query}}{{/if}}{{#if sort}}&sort={{sort}}{{/if}}{{#if limit}}&limit={{limit}}{{/if}}">Anterior</a>
+  {{/if}}
 
-  <footer>© copyright 2024 - Mariano Pisano</footer>
-</section>
+  <span>Página {{page}}</span>
+
+  {{#if hasNextPage}}
+    <a href="/?page={{nextPage}}{{#if query}}&query={{query}}{{/if}}{{#if sort}}&sort={{sort}}{{/if}}{{#if limit}}&limit={{limit}}{{/if}}">Siguiente</a>
+  {{/if}}
+</div>
+</main>

@@ -16,9 +16,6 @@ for (const producto of productos2) {
   producto.status = true;
   producto.stock = Math.floor(Math.random() * 100) + 1; // Genera un stock aleatorio entre 1 y 100
   newProductos.push(producto);
-  if (id > 30) {
-    break;
-  }
 }
 
 await fs.writeFile("./src/data/productos.json", JSON.stringify(newProductos, null, 2));
