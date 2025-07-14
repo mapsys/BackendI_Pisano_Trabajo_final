@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const carritoCantidad = document.getElementById("carrito-contenido-cantidad");
   const carritoTotal = document.getElementById("carrito-contenido-precio");
   const linkCarrito = document.getElementById("boton-carrito");
+  const total = document.querySelector("#carrito-total");
   // manejo de los botones de categorias y seguir comprando
   const path = window.location.pathname;
   const esCarrito = path.startsWith("/carts/");
@@ -19,7 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       link.classList.remove("disable");
     }
   });
-
+  linksCategorias.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      linksCategorias.forEach((b) => b.classList.remove("active")); // quitar clase a todos
+      boton.classList.add("active"); // agregar clase solo al clickeado
+    });
+  });
   if (linkVolver) {
     if (esCarrito) {
       linkVolver.classList.remove("disable");
@@ -30,6 +36,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Verifico si hay carrito al leer la pagina
   const cartId = localStorage.getItem("cartId");
+  if (esCarrito && !cartId) {
+    // Si no hay carrito en localStorage, y estás en la página de carrito, redirigí
+    window.location.href = "/";
+  }
+  console.log("Carrito ID:", cartId);
   if (cartId) {
     linkCarrito.href = `/carts/${cartId}`;
     try {
@@ -183,6 +194,17 @@ document.addEventListener("DOMContentLoaded", async () => {
           carritoCantidad.textContent = totales.totalCantidad;
           carritoTotal.textContent = totales.totalPrecio;
           location.reload();
+          // actualizo el estado del carrito
+          try {
+            const res = await fetch(`/api/carts/${cartId}/estado`, {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ estado: "inactivo" }),
+            });
+          } catch (error) {
+            console.error("Error al actualizar el estado del carrito:", error);
+          }
+          localStorage.removeItem("cartId");
           if (totales.totalCantidad === 0) {
             carritoContenedor.classList.add("disable");
             linkCarrito.href = "/carts";
@@ -197,4 +219,90 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
   });
+
+  // Comprar Carrito
+  const botonComprar = document.getElementById("carrito-acciones-comprar");
+  if (botonComprar) {
+    botonComprar.addEventListener("click", async () => {
+      const cartId = localStorage.getItem("cartId");
+      if (!cartId) {
+        alert("No hay carrito para comprar");
+        return;
+      }
+      Swal.fire({
+        title: "Finalizar compra?",
+        text: `Tu compra asiende a ${total.innerText}
+            Estas de acuerdo`,
+        showDenyButton: true,
+        confirmButtonText: "Finalizar Compra",
+        denyButtonText: `Seguir comprando`,
+        icon: "question",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          // Actualizamos el número de productos en el carrito
+          const totalesRes = await fetch(`/api/carts/${cartId}/totales`);
+          const totales = await totalesRes.json();
+          numeritoCarrito.textContent = totales.totalCantidad;
+          carritoCantidad.textContent = totales.totalCantidad;
+          carritoTotal.textContent = totales.totalPrecio;
+          // actualizo el estado del carrito
+          try {
+            const res = await fetch(`/api/carts/${cartId}/estado`, {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ estado: "comprado" }),
+            });
+          } catch (error) {
+            console.error("Error al actualizar el estado del carrito:", error);
+          }
+          localStorage.removeItem("cartId");
+          if (totales.totalCantidad === 0) {
+            carritoContenedor.classList.add("disable");
+            linkCarrito.href = "/carts";
+          }
+          location.reload();
+          Swal.fire({
+            title: "Compra Finalizada",
+            text: "Gracias por tu compra",
+            icon: "success ",
+          });
+          location.reload();
+        }
+      });
+    });
+  }
+
+  // Event listeners para los selects de Limit y de orden
+  const limitSelect = document.getElementById("limit");
+  const sortSelect = document.getElementById("sort");
+  const params = new URLSearchParams(window.location.search);
+
+  if (limitSelect && params.get("limit")) {
+    limitSelect.value = params.get("limit");
+  }
+
+  if (sortSelect && params.get("sort")) {
+    sortSelect.value = params.get("sort");
+  }
+  function updateQuery() {
+    const params = new URLSearchParams(window.location.search);
+
+    if (limitSelect) {
+      params.set("limit", limitSelect.value);
+    }
+    if (sortSelect) {
+      params.set("sort", sortSelect.value);
+    }
+
+    // Recargamos la URL con los nuevos parámetros
+    window.location.search = params.toString();
+  }
+
+  if (limitSelect) {
+    limitSelect.addEventListener("change", updateQuery);
+  }
+
+  if (sortSelect) {
+    sortSelect.addEventListener("change", updateQuery);
+  }
 });

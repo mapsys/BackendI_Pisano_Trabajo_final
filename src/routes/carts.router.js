@@ -119,5 +119,22 @@ export default function cartsRouter(cartManager, productManager) {
     }
   });
 
+  router.put("/:cid/estado", async (req, res) => {
+    const { cid } = req.params;
+    if (!req.body) {
+      return res.status(400).json({ error: "Se requiere un campo 'estado'" });
+    }
+    const { estado } = req.body;
+    if (typeof estado !== "string" || !["activo", "inactivo", "comprado"].includes(estado)) {
+      return res.status(400).json({ error: "El estado debe ser 'activo', 'inactivo' o 'comprado'" });
+    }
+    try {
+      const updatedCart = await cartManager.updateCartStatus(cid, estado);
+      res.status(200).json(updatedCart);
+    } catch (error) {
+      res.status(404).json({ error: error.message });
+    }
+  });
+
   return router;
 }

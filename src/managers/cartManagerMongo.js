@@ -29,7 +29,6 @@ export default class CartManager {
 
   async calcularTotales(cartId) {
     try {
-
       const result = await Cart.aggregate([
         { $match: { _id: new mongoose.Types.ObjectId(cartId) } },
         { $unwind: "$products" },
@@ -111,7 +110,7 @@ export default class CartManager {
     await cart.save();
     return cart;
   }
-async updatecartProducts(cartId, products) {
+  async updatecartProducts(cartId, products) {
     const cart = await Cart.findById(cartId);
     if (!cart) {
       throw new Error("Carrito no encontrado");
@@ -137,7 +136,6 @@ async updatecartProducts(cartId, products) {
       throw new Error("Producto no encontrado en el carrito");
     }
 
-    
     if (quantity <= 0) {
       cart.products.splice(productIndex, 1); // Eliminar producto si la cantidad es 0 o menor
     } else {
@@ -148,4 +146,14 @@ async updatecartProducts(cartId, products) {
     return cart;
   }
 
+  async updateCartStatus(cartId, status) {
+    const cart = await Cart.findById(cartId);
+    if (!cart) {
+      throw new Error("Carrito no encontrado");
+    }
+
+    cart.estado = status;
+    await cart.save();
+    return cart;
+  }
 }

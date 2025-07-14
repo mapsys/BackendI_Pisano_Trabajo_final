@@ -11,6 +11,8 @@ const productInCartSchema = new mongoose.Schema({
 
 const cartSchema = new mongoose.Schema({
   products: { type: [productInCartSchema], default: [] },
+  timestamp: { type: Date, default: Date.now },
+  estado: { type: String, default: "activo" },
 });
 
 const Cart = mongoose.model("Cart", cartSchema);
