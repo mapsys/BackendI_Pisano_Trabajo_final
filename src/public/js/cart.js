@@ -1,8 +1,53 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   const botones = document.querySelectorAll(".producto-agregar");
+  const carritoContenedor = document.getElementById("carrito-contenido");
   const numeritoCarrito = document.getElementById("numerito");
-  const carritoCantidad = document.getElementById("carrito-cantidad");
+  const carritoCantidad = document.getElementById("carrito-contenido-cantidad");
   const carritoTotal = document.getElementById("carrito-contenido-precio");
+  const linkCarrito = document.getElementById("boton-carrito");
+  // manejo de los botones de categorias y seguir comprando
+  const path = window.location.pathname;
+  const esCarrito = path.startsWith("/carts/");
+
+  const linksCategorias = document.querySelectorAll(".boton-categoria");
+  const linkVolver = document.querySelector(".boton-volver");
+
+  linksCategorias.forEach((link) => {
+    if (esCarrito) {
+      link.classList.add("disable");
+    } else {
+      link.classList.remove("disable");
+    }
+  });
+
+  if (linkVolver) {
+    if (esCarrito) {
+      linkVolver.classList.remove("disable");
+    } else {
+      linkVolver.classList.add("disable");
+    }
+  }
+
+  // Verifico si hay carrito al leer la pagina
+  const cartId = localStorage.getItem("cartId");
+  if (cartId) {
+    linkCarrito.href = `/carts/${cartId}`;
+    try {
+      const res = await fetch(`/api/carts/${cartId}/totales`);
+      if (res.ok) {
+        const totales = await res.json();
+        // 👀 Mostrar el contenedor si estaba oculto
+        if (totales.totalCantidad > 0) {
+          carritoContenedor.classList.remove("disable");
+        }
+        if (numeritoCarrito) numeritoCarrito.textContent = totales.totalCantidad;
+        if (carritoCantidad) carritoCantidad.textContent = totales.totalCantidad;
+        if (carritoTotal) carritoTotal.textContent = `$${totales.totalPrecio}`;
+      }
+    } catch (err) {
+      console.error("Error al cargar los totales del carrito al iniciar:", err);
+    }
+  }
   botones.forEach((boton) => {
     boton.addEventListener("click", async () => {
       const productId = boton.dataset.id;
@@ -43,13 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }).showToast();
           // Actualizamos el número de productos en el carrito
           try {
-            console.log("Obteniendo totales del carrito con ID:", cartId);
             const res = await fetch(`/api/carts/${cartId}/totales`);
-            console.log("Respuesta de totales:", res);
             const totales = await res.json();
             numeritoCarrito.textContent = totales.totalCantidad;
             carritoCantidad.textContent = totales.totalCantidad;
             carritoTotal.textContent = totales.totalPrecio;
+            carritoContenedor.classList.remove("disable");
+            linkCarrito.href = `/carts/${cartId}`;
           } catch (err) {
             console.error("Error al obtener los totales del carrito:", err);
             alert("Error al actualizar el carrito");

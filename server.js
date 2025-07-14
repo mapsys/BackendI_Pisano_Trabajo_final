@@ -9,7 +9,7 @@ import productsRouter from "./src/routes/products.router.js";
 import cartsRouter from "./src/routes/carts.router.js";
 import viewsRouter from "./src/routes/views.router.js";
 import { Server } from "socket.io";
-import {connectDB} from "./src/dbo/config.js";
+import { connectDB } from "./src/dbo/config.js";
 import { configureSockets } from "./src/sockets/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -32,7 +32,7 @@ const hbs = exphbs.create({
     firstThumbnail: (thumbnails) => (thumbnails && thumbnails.length > 0 ? thumbnails[0] : "/img/no-image.png"),
   },
 });
-app.engine("handlebars", hbs.engine);
+app.engine("handlebars", hbs.engine);  
 app.set("view engine", "handlebars");
 app.set("views", join(__dirname, "src/views"));
 
@@ -47,8 +47,8 @@ connectDB();
 // Rutas
 app.use("/api/products", productsRouter(productManager));
 app.use("/api/carts", cartsRouter(cartManager, productManager));
-app.use("/", viewsRouter(productManager));
-
+app.use("/", viewsRouter(productManager, cartManager));
+ 
 // WebSocket connection
 configureSockets(io, productManager);
 

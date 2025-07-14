@@ -47,7 +47,6 @@ form.addEventListener("submit", (e) => {
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete-btn")) {
     const id = e.target.dataset.id;
-    console.log("Emit deleteProduct con id:", id);
     if (confirm("¿Seguro que deseas eliminar este producto?")) {
       socket.emit("deleteProduct", id);
     }

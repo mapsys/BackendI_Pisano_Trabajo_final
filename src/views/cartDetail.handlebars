@@ -1,0 +1,24 @@
+<main class="contenedor-carrito">
+  <h2>Tu Carrito</h2>
+
+  {{#if productos.length}}
+    <div class="carrito-productos">
+      {{#each productos}}
+        <div class="carrito-producto">
+          <img src="{{thumbnail}}" alt="{{title}}" class="carrito-imagen" />
+          <div>
+            <h4>{{title}}</h4>
+            <p>Precio unitario: ${{price}}</p>
+            <p>Cantidad: {{quantity}}</p>
+            <p>Subtotal: ${{subtotal}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="carrito-acciones">
+      <h3>Total: ${{total}}</h3>
+    </div>
+  {{else}}
+    <p class="carrito-vacio">Tu carrito está vacío</p>
+  {{/if}}
+</main>

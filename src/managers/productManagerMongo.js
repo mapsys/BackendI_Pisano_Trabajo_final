@@ -65,13 +65,10 @@ export default class ProductManagerMongo {
   }
 
   async deleteProduct(id) {
-    console.log("eliminando", id);
     const product = await Producto.findByIdAndDelete(id);
     if (!product) {
-      console.log("no se encontro el producto", id);
       throw new Error("Producto no encontrado");
     }
-    console.log("producto eliminado", product);
     return product;
   }
 

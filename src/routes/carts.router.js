@@ -4,7 +4,7 @@ import { Router } from "express";
 export default function cartsRouter(cartManager, productManager) {
   const router = Router();
 
-  router.post("/", async (req, res) => {
+  router.post("/", async (req, res) => {    
     try {
       const newCart = await cartManager.addCart();
       res.status(201).json(newCart);

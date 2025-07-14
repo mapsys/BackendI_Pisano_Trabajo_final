@@ -29,7 +29,6 @@ export default class CartManager {
 
   async calcularTotales(cartId) {
     try {
-      console.log("Calculando totales para el carrito:", cartId);
 
       const result = await Cart.aggregate([
         { $match: { _id: new mongoose.Types.ObjectId(cartId) } },
@@ -63,7 +62,6 @@ export default class CartManager {
         },
       ]);
 
-      console.log("Resultado de la agregación:", result);
       return result[0] || { totalCantidad: 0, totalPrecio: 0 };
     } catch (error) {
       console.error("Error en calcularTotales:", error.message);
