@@ -107,4 +107,94 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
   });
+
+  // Eliminar producto
+  const botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
+  botonesEliminar.forEach((boton) => {
+    boton.addEventListener("click", async () => {
+      const id = boton.dataset.id;
+      const cartId = localStorage.getItem("cartId");
+      if (!cartId) {
+        alert("No hay carrito para eliminar productos");
+        return;
+      }
+      try {
+        const res = await fetch(`/api/carts/${cartId}/products/${id}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        });
+        if (res.ok) {
+          Toastify({
+            text: "Producto eliminado del carrito",
+            duration: 2000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#dc3545",
+          }).showToast();
+          // Actualizamos el número de productos en el carrito
+          const totalesRes = await fetch(`/api/carts/${cartId}/totales`);
+          const totales = await totalesRes.json();
+          numeritoCarrito.textContent = totales.totalCantidad;
+          carritoCantidad.textContent = totales.totalCantidad;
+          carritoTotal.textContent = totales.totalPrecio;
+          location.reload();
+          if (totales.totalCantidad === 0) {
+            carritoContenedor.classList.add("disable");
+            linkCarrito.href = "/carts";
+          }
+        } else {
+          const data = await res.json();
+          alert(data.error || "Error al eliminar");
+        }
+      } catch (err) {
+        console.error("Error al eliminar el producto:", err);
+        alert("Error en la solicitud");
+      }
+    });
+  });
+
+  // Vaciar Carrito
+  const botonesVaciar = document.querySelectorAll("#carrito-acciones-vaciar");
+  botonesVaciar.forEach((boton) => {
+    boton.addEventListener("click", async () => {
+      const id = boton.dataset.id;
+      const cartId = localStorage.getItem("cartId");
+      if (!cartId) {
+        alert("No hay carrito para eliminar productos");
+        return;
+      }
+      try {
+        const res = await fetch(`/api/carts/${cartId}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+        });
+        if (res.ok) {
+          Toastify({
+            text: "Carrito vaciado",
+            duration: 2000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#dc3545",
+          }).showToast();
+          // Actualizamos el número de productos en el carrito
+          const totalesRes = await fetch(`/api/carts/${cartId}/totales`);
+          const totales = await totalesRes.json();
+          numeritoCarrito.textContent = totales.totalCantidad;
+          carritoCantidad.textContent = totales.totalCantidad;
+          carritoTotal.textContent = totales.totalPrecio;
+          location.reload();
+          if (totales.totalCantidad === 0) {
+            carritoContenedor.classList.add("disable");
+            linkCarrito.href = "/carts";
+          }
+        } else {
+          const data = await res.json();
+          alert(data.error || "Error al vaciar el carrito");
+        }
+      } catch (err) {
+        console.error("Error al vacias:", err);
+        alert("Error en la solicitud");
+      }
+    });
+  });
 });

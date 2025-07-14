@@ -61,6 +61,7 @@ export default function viewsRouter(productManager, cartManager) {
         quantity: item.quantity,
         subtotal: item.quantity * item.product.price,
         thumbnail: item.product.thumbnails[0],
+        id: item.product._id,
       }));
 
       const total = productosConSubtotal.reduce((acc, p) => acc + p.subtotal, 0);

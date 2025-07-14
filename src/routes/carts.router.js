@@ -118,5 +118,6 @@ export default function cartsRouter(cartManager, productManager) {
       res.status(404).json({ error: error.message });
     }
   });
+
   return router;
 }

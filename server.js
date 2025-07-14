@@ -32,7 +32,7 @@ const hbs = exphbs.create({
     firstThumbnail: (thumbnails) => (thumbnails && thumbnails.length > 0 ? thumbnails[0] : "/img/no-image.png"),
   },
 });
-app.engine("handlebars", hbs.engine);  
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", join(__dirname, "src/views"));
 

@@ -54,6 +54,7 @@ aside {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .logo {
   font-weight: 400;
   font-size: 1.3rem;
@@ -154,12 +155,15 @@ main {
   background-color: white;
   cursor: pointer;
 }
+
 .user-login:hover {
   background-color: var(--clr-main);
 }
+
 .bi-person-circle {
   margin-right: 3px;
 }
+
 .titulo-principal {
   color: var(--clr-main);
   margin-bottom: 2rem;
@@ -170,6 +174,7 @@ main {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
+
 .tarjeta-horizontal {
   display: flex;
   flex-direction: row;
@@ -264,6 +269,7 @@ main {
   align-items: center;
   font-size: 1.2rem;
 }
+
 .carrito-contenido-total {
   display: flex;
   flex-direction: row;
@@ -322,6 +328,7 @@ main {
   flex-direction: column;
   gap: 0.5rem;
 }
+
 /* Carrito */
 
 .contenedor-carrito {
@@ -329,15 +336,18 @@ main {
   flex-direction: column;
   gap: 1.5rem;
 }
+
 .carrito-vacio,
 .carrito-comprado {
   color: var(--clr-main);
 }
+
 .carrito-productos {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
+
 .carrito-producto {
   display: flex;
   justify-content: space-between;
@@ -348,6 +358,7 @@ main {
   color: var(--clr-main);
   padding-right: 1.5rem;
 }
+
 .carrito-producto small {
   font-size: 0.75rem;
 }
@@ -363,10 +374,12 @@ main {
   cursor: pointer;
   background-color: transparent;
 }
+
 .carrito-acciones {
   display: flex;
   justify-content: space-between;
 }
+
 .carrito-acciones-derecha {
   display: flex;
 }
@@ -405,4 +418,142 @@ main {
 
 .disable {
   display: none;
+}
+
+/* === Mejoras visuales para productos del carrito === */
+
+.carrito-producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-gray);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: var(--clr-main);
+  padding-right: 1.5rem;
+  flex-wrap: wrap;
+  min-height: 5rem;
+}
+
+.carrito-producto > * {
+  flex: 1;
+  min-width: 80px;
+}
+
+.carrito-producto-titulo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 160px;
+}
+
+.carrito-producto-titulo h3 {
+  font-size: 1rem;
+  line-height: 1.2;
+  max-width: 200px;
+  max-height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.carrito-producto-cantidad,
+.carrito-producto-precio,
+.carrito-producto-subtotal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-start;
+}
+
+.carrito-producto small {
+  font-size: 0.75rem;
+}
+
+.carrito-imagen {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.carrito-producto-eliminar {
+  border: 0;
+  color: var(--clr-red);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* === Ajustes de espaciado y color de imagen === */
+
+.carrito-producto {
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-gray);
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  color: var(--clr-main);
+  min-height: 5rem;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.carrito-producto > *:not(.carrito-imagen) {
+  flex: 1;
+  min-width: 80px;
+}
+
+.carrito-imagen {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  background-color: var(--clr-gray);
+  flex-shrink: 0;
+}
+
+.carrito-producto-titulo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 200px;
+}
+
+.carrito-producto-titulo h3 {
+  font-size: 1rem;
+  line-height: 1.2;
+  max-width: 100%;
+  max-height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.carrito-producto-cantidad,
+.carrito-producto-precio,
+.carrito-producto-subtotal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-start;
+}
+
+.carrito-producto small {
+  font-size: 0.75rem;
+}
+
+.carrito-producto-eliminar {
+  border: 0;
+  color: var(--clr-red);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
