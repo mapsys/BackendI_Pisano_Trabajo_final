@@ -95,4 +95,57 @@ export default class CartManager {
     await cart.save();
     return cart;
   }
+
+  async deleteProductFromCart(cartId, productId) {
+    const cart = await Cart.findById(cartId);
+    if (!cart) {
+      throw new Error("Carrito no encontrado");
+    }
+
+    const productIndex = cart.products.findIndex((p) => p.product.toString() === productId);
+    if (productIndex === -1) {
+      throw new Error("Producto no encontrado en el carrito");
+    }
+
+    cart.products.splice(productIndex, 1);
+    await cart.save();
+    return cart;
+  }
+async updatecartProducts(cartId, products) {
+    const cart = await Cart.findById(cartId);
+    if (!cart) {
+      throw new Error("Carrito no encontrado");
+    }
+
+    cart.products = products.map((product) => ({
+      product: new mongoose.Types.ObjectId(product.product),
+      quantity: product.quantity,
+    }));
+
+    await cart.save();
+    return cart;
+  }
+
+  async updateProductQty(cartId, productId, quantity) {
+    const cart = await Cart.findById(cartId);
+    if (!cart) {
+      throw new Error("Carrito no encontrado");
+    }
+
+    const productIndex = cart.products.findIndex((p) => p.product.toString() === productId);
+    if (productIndex === -1) {
+      throw new Error("Producto no encontrado en el carrito");
+    }
+
+    
+    if (quantity <= 0) {
+      cart.products.splice(productIndex, 1); // Eliminar producto si la cantidad es 0 o menor
+    } else {
+      cart.products[productIndex].quantity = quantity; // Actualizar cantidad
+    }
+
+    await cart.save();
+    return cart;
+  }
+
 }
