@@ -43,10 +43,10 @@ export default function productsRouter(productManager) {
     }
   });
 
-  router.get("/:code", async (req, res) => {
-    const { code } = req.params;
+  router.get("/:id", async (req, res) => {
+    const { id } = req.params;
     try {
-      const product = await productManager.getProductByCode(code);
+      const product = await productManager.getProductById(id);
       res.status(200).json(product);
     } catch (error) {
       res.status(404).json({ error: error.message });
@@ -66,11 +66,11 @@ export default function productsRouter(productManager) {
     }
   });
 
-  router.put("/:code", async (req, res) => {
-    const { code } = req.params;
+  router.put("/:id", async (req, res) => {
+    const { id } = req.params;
     const updatedFields = req.body;
     try {
-      const updatedProduct = await productManager.updateProduct(code, updatedFields);
+      const updatedProduct = await productManager.updateProduct(id, updatedFields);
       res.status(200).json(updatedProduct);
     } catch (error) {
       res.status(404).json({ error: error.message });
@@ -80,7 +80,7 @@ export default function productsRouter(productManager) {
   router.delete("/:id", async (req, res) => {
     const { id } = req.params;
     try {
-      await productManager.deleteProduct(Number(id));
+      await productManager.deleteProduct(id);
       res.status(200).json({ message: "Producto eliminado correctamente" });
     } catch (error) {
       res.status(404).json({ error: error.message });

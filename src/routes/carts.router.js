@@ -35,7 +35,7 @@ export default function cartsRouter(cartManager, productManager) {
     }
   });
 
-  router.post("/:cid/products/:pid", async (req, res) => {
+  router.post("/:cid/product/:pid", async (req, res) => {
     const { qty } = req.body;
     const { cid, pid } = req.params;
 
@@ -49,7 +49,7 @@ export default function cartsRouter(cartManager, productManager) {
   });
 
   // DELETES
-  router.delete("/:cid/products/:pid", async (req, res) => {
+  router.delete("/:cid/product/:pid", async (req, res) => {
     const { cid, pid } = req.params;
     try {
       const cart = await cartManager.deleteProductFromCart(cid, pid);
@@ -100,7 +100,7 @@ export default function cartsRouter(cartManager, productManager) {
     }
   });
 
-  router.put("/:cid/products/:pid", async (req, res) => {
+  router.put("/:cid/product/:pid", async (req, res) => {
     const { cid, pid } = req.params;
     if (!req.body) {
       return res.status(400).json({ error: "Se requiere un campo 'qty' con un número mayor a 0" });

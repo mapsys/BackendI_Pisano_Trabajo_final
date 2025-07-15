@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       boton.classList.add("active"); // agregar clase solo al clickeado
     });
   });
+
   if (linkVolver) {
     if (esCarrito) {
       linkVolver.classList.remove("disable");
@@ -81,7 +82,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Actualizamos el número de productos en el carrito o agregamos uno nuevo
       // Tambien actualizamos los totales del carrito
       try {
-        const res = await fetch(`/api/carts/${cartId}/products/${productId}`, {
+        const res = await fetch(`/api/carts/${cartId}/product/${productId}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ qty: 1 }),
@@ -130,7 +131,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
       }
       try {
-        const res = await fetch(`/api/carts/${cartId}/products/${id}`, {
+        const res = await fetch(`/api/carts/${cartId}/product/${id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         });

@@ -50,10 +50,16 @@ export default class ProductManagerMongo {
     }
     return product;
   }
-
-  async updateProduct(code, updatedFields) {
-    const product = await Producto.findOneAndUpdate(
-      { code: code }, // filtro por campo code
+  async getProductById(id) {
+    const product = await Producto.findById(id);
+    if (!product) {
+      throw new Error("Producto no encontrado");
+    }
+    return product;
+  }
+  async updateProduct(id, updatedFields) {
+    const product = await Producto.findByIdAndUpdate(
+      { _id: id }, // filtro por campo code
       updatedFields,
       { new: true } // devuelve el documento actualizado
     );

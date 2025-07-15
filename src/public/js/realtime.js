@@ -1,5 +1,4 @@
 const socket = io();
-
 // Actualizar lista de productos
 socket.on("error", (errorMessage) => {
   alert(`Error: ${errorMessage}`);
