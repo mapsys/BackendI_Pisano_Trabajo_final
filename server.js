@@ -11,7 +11,7 @@ import viewsRouter from "./src/routes/views.router.js";
 import { Server } from "socket.io";
 import { connectDB } from "./src/dbo/config.js";
 import { configureSockets } from "./src/sockets/index.js";
-
+import cors from 'cors';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const dataPath = join(__dirname, "src/data");
@@ -20,7 +20,9 @@ const dataPath = join(__dirname, "src/data");
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
-
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 const PORT = 8080;
 // const productManager = await ProductManager.crear(dataPath);
 const productManager = new ProductManager();

@@ -557,3 +557,37 @@ main {
   cursor: pointer;
   font-size: 1.2rem;
 }
+.realTimeView button {
+  background-color: var(--clr-main);
+  color: var(--clr-white);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 10px;
+}
+.realTimeView button:hover {
+  color: black;
+}
+.realtime-productos {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.realtime-producto {
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-gray);
+  border-radius: 1rem;
+  color: var(--clr-main);
+  padding-right: 1.5rem;
+  gap: 0.5rem;
+}
+.realtime-producto small {
+  font-size: 0.75rem;
+}
+
+.realtime-imagen {
+  width: 2rem;
+  border-radius: 1rem;
+}
