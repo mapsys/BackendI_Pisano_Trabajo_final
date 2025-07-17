@@ -1,4 +1,10 @@
 const socket = io();
+function getThumbnail(thumbnails) {
+  if (!Array.isArray(thumbnails) || !thumbnails[0] || thumbnails[0].trim() === "") {
+    return "/img/no-image.png";
+  }
+  return thumbnails[0];
+}
 // Actualizar lista de productos
 socket.on("error", (errorMessage) => {
   alert(`Error: ${errorMessage}`);
@@ -10,18 +16,18 @@ socket.on("products", (products) => {
     const li = document.createElement("div");
     li.classList.add("realtime-producto");
     li.innerHTML = `
-              <img class="realtime-imagen" src="${product.thumbnails[0]}" alt="${product.title}" />
+              <img class="realtime-imagen" src="${getThumbnail(product.thumbnails)}" alt="${product.title}" />
               <div class="realtime-producto-titulo">
                 <small>Nombre</small>
-                <h6>${product.title}</h6>
+                <h4>${product.title}</h4>
               </div>
               <div class="realtime-producto-precio">
                 <small>Precio</small>
                 <p>${product.price}</p>
               </div>
-            <button data-id="${product._id}" class="delete-btn"><i class="bi bi-trash-fill delete-btn" data-id="${product._id}"></i></button>
+            <button data-id="${product._id}" class="delete-btn"><i class="bi bi-trash-fill delete-btn" style="color: red;" data-id="${product._id}"></i></button>
         `;
-    list.appendChild(li);
+    list.prepend(li);
   });
   document.getElementById("product-count").textContent = `Total de productos: ${products.length}`;
 });
@@ -37,6 +43,7 @@ form.addEventListener("submit", (e) => {
     thumbnail: document.getElementById("thumbnail").value,
     code: document.getElementById("code").value,
     stock: Number(document.getElementById("stock").value),
+    category: document.getElementById("category").value,
   };
   socket.emit("addProduct", newProduct);
   form.reset();
@@ -51,3 +58,17 @@ document.addEventListener("click", (e) => {
     }
   }
 });
+
+// Oculto los botones de categoria
+const linksCategorias = document.querySelectorAll(".boton-categoria");
+const linkVolver = document.querySelector(".boton-volver");
+linksCategorias.forEach((link) => {
+  link.classList.add("disable");
+});
+
+// Muestro el boton de seguir comprando
+linkVolver.classList.remove("disable");
+
+// escondo el total del carrito
+const contenidoCarrito = document.getElementById("boton-carrito");
+contenidoCarrito.classList.add("disable");

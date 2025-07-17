@@ -8,7 +8,15 @@ export const configureSockets = (io, productManager) => {
     socket.on("addProduct", (productData) => {
       (async () => {
         try {
-          await productManager.addProduct(productData.description, productData.price, productData.thumbnail, productData.title, productData.code, productData.stock);
+          await productManager.addProduct(
+            productData.description,
+            productData.price,
+            productData.thumbnail,
+            productData.title,
+            productData.code,
+            productData.stock,
+            productData.category
+          );
           const updatedProducts = await productManager.getProducts();
           io.emit("products", updatedProducts);
         } catch (error) {

@@ -16,7 +16,7 @@ export default class ProductManagerMongo {
     return productos;
   }
 
-  async addProduct(description, price, thumbnail, title, code, stock) {
+  async addProduct(description, price, thumbnail, title, code, stock, categoria) {
     if (!description || !price || !title || !code || stock === undefined) {
       throw new Error("Los campos Title, Description, Price, Code y Stock son obligatorios");
     }
@@ -38,6 +38,7 @@ export default class ProductManagerMongo {
       code,
       stock,
       status: stock > 0,
+      category: categoria,
     });
     await newProduct.save();
     return newProduct;

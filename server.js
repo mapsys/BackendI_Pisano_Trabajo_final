@@ -11,7 +11,7 @@ import viewsRouter from "./src/routes/views.router.js";
 import { Server } from "socket.io";
 import { connectDB } from "./src/dbo/config.js";
 import { configureSockets } from "./src/sockets/index.js";
-import cors from 'cors';
+import cors from "cors";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const dataPath = join(__dirname, "src/data");
@@ -20,9 +20,11 @@ const dataPath = join(__dirname, "src/data");
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer);
-app.use(cors({
-  origin: 'http://localhost:5173'
-}));
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 const PORT = 8080;
 // const productManager = await ProductManager.crear(dataPath);
 const productManager = new ProductManager();
@@ -31,7 +33,10 @@ const cartManager = new CartManager();
 // Configuro Handlebars
 const hbs = exphbs.create({
   helpers: {
-    firstThumbnail: (thumbnails) => (thumbnails && thumbnails.length > 0 ? thumbnails[0] : "/img/no-image.png"),
+    firstThumbnail: (thumbnails) => {
+      const primer = thumbnails && thumbnails[0] && thumbnails[0].trim();
+      return primer ? primer : "/img/no-image.png";
+    },
   },
 });
 app.engine("handlebars", hbs.engine);
@@ -50,7 +55,7 @@ connectDB();
 app.use("/api/products", productsRouter(productManager));
 app.use("/api/carts", cartsRouter(cartManager, productManager));
 app.use("/", viewsRouter(productManager, cartManager));
- 
+
 // WebSocket connection
 configureSockets(io, productManager);
 

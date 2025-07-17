@@ -19,7 +19,7 @@
     </form>
 
   </div>
-
+<div id="productos-y-paginacion">
   <div id="contenedor-productos" class="contenedor-productos">
     {{#each products}}
       <div class="producto tarjeta-horizontal">
@@ -45,6 +45,7 @@
   {{#if hasNextPage}}
     <a href="/?page={{nextPage}}{{#if query}}&query={{query}}{{/if}}{{#if sort}}&sort={{sort}}{{/if}}{{#if limit}}&limit={{limit}}{{/if}}">Siguiente</a>
   {{/if}}
+</div>
 </div>
 </main>
 <script type="module" src="/js/home.js"></script>
