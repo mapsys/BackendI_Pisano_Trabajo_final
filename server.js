@@ -25,7 +25,7 @@ app.use(
     origin: "http://localhost:5173",
   })
 );
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 // const productManager = await ProductManager.crear(dataPath);
 const productManager = new ProductManager();
 const cartManager = new CartManager();
